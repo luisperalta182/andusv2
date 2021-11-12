@@ -1,0 +1,119 @@
+@import "../../../sass/essentials";
+
+.horizontal-area.homeArticles {
+  width: 3840px;
+  height: 100vh !important;
+  display: flex;
+  flex-flow: nowrap;
+  background: $black;
+  overflow-x: hidden;
+  align-content: center;
+  align-items: center;
+  padding: 5vh 0 !important;
+
+  .headingPost{
+    margin-left: 100px !important;
+    margin-right: 185px !important;
+
+      h1{
+        text-align: left;
+        font-size: 40px;
+        font-weight: 300;
+        line-height: 56.2px;
+        letter-spacing: -0.01em;
+        max-width: 600px;
+        color: $white;
+      }
+
+      .divider{
+        background: $white;
+        height: 1px;
+        max-width: 553px;
+        margin: 30px 0;
+      }
+
+      p{
+        text-align: left;
+        font-size: 22px;
+        font-weight: 300;
+        line-height: 30.91px;
+        max-width: 580px;
+        color: $white;
+      }
+
+  }
+
+  .horizontal {
+    width: 640px;
+    height: 880px;
+    max-height:  880px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.5em;
+    text-align: center;
+    color: white;
+    position: relative;
+    box-sizing: border-box;
+    margin:0 30px;
+  
+    a{
+      text-decoration: none;
+      .horizontalPost{
+          padding: 5vh;
+  
+        @include on-event{
+          img{
+            border-radius: 25px;
+            transition: all .25s ease;
+          }
+        }
+    
+    
+        img{
+          width: 100%;
+          // height: 80vh;
+          transition: all .25s ease;
+        }
+    
+        .infoPost{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: flex-start;
+          flex-wrap: nowrap;
+          margin-top: 16px;
+          align-content: flex-start;
+    
+          ul{
+            list-style: none;
+            padding-left: 0;
+    
+            li{
+              font-weight: 300;
+              font-size: 16px;
+              line-height: 24.84px;
+              text-align: left;
+              text-decoration: none;
+              color: $white;
+            }
+          }
+    
+          p{
+            text-align: right;
+            font-weight: 300;
+            font-size: 28px;
+            line-height: 33.85px;
+            max-width: 290px;
+            text-decoration: none;
+            color: $white;
+          }
+        }
+      }
+    }
+  
+  }
+  
+  
+}

@@ -1,0 +1,41 @@
+@import "../../../sass/essentials";
+
+.approachComponent{
+    position: relative;
+    padding-top: 75px;
+    padding-bottom: 314px;
+
+    .approachHeader{
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+
+        h1{
+            color: $black;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 28.08px;
+            text-align: right;
+            span{
+                color: $color__primary;
+            }
+        }
+    }
+
+    .approachContent{
+        padding-top: 170px;
+        p{
+            font-size: 40px;
+            font-weight: 300;
+            line-height: 56.2px;
+            color: $black;
+            font: $font__primary;
+            padding-bottom: 40px;
+
+            span{
+                font-weight: 400;
+            }
+        }
+    }
+}

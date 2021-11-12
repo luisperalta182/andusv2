@@ -1,0 +1,129 @@
+html {
+	box-sizing: border-box;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	color: $black;
+	overflow-x: hidden;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* stylelint-disable */
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+/* stylelint-enable */
+
+body {
+	background-color: $color__body;
+	font-family: $font__primary;
+	margin: 0;
+}
+
+
+html, body {
+	height: 100%;
+}
+
+
+b, strong {
+	font-weight: 700;
+}
+
+hr {
+	margin: 20px 0;
+}
+
+figcaption {
+	color: rgba( 0, 0, 0, 0.5 );
+}
+
+abbr, acronym {
+	text-decoration: none;
+}
+
+code, kbd, tt, var {
+	background: rgba(0, 0, 0, 0.03);
+	padding: 1px 3px;
+	font-weight: bold;
+}
+
+code {
+	padding: 1px 5px;
+	color: inherit;
+	font-weight: normal;
+	background-color: #f6f8fa;
+}
+
+pre {
+	padding: 16px;
+	overflow: auto;
+	font-size: 85%;
+	line-height: 1.45;
+	background-color: #f6f8fa;
+	border-radius: 3px;
+}
+
+table {
+	border-collapse: collapse;
+
+	td, th {
+		border: 1px solid $gray;
+		padding: 10px 15px;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+}
+
+
+/* custom clasess */
+
+.custom-container{
+	max-width: 1344px;
+}
+
+.no-pad{
+	padding: 0;
+}
+
+.whiteBg{
+	background: $white;
+}
+
+
+.mainButton{
+	 border: 1px solid $white;
+	 box-sizing: border-box;
+	 border-radius: 50px;
+	 color: $white;
+	 text-decoration: none;
+	 font-size: 18px;
+	 font-weight: 400;
+	 line-height: 28.08px;
+	 text-align: center;
+	 padding: 10px 19px;
+
+	 @include on-event{
+		 color: $white;
+	 }
+}
+
+.mainButtonBlack{
+	border: 1px solid $black;
+	box-sizing: border-box;
+	border-radius: 50px;
+	color: $black;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 28.08px;
+	text-align: center;
+	padding: 10px 19px;
+
+	@include on-event{
+		color: $black;
+	}
+}

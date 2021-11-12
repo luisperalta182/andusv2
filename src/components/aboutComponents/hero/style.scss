@@ -1,0 +1,73 @@
+
+@import "../../../../sass/essentials";
+
+.heroComponent{
+    padding-top: 50px;
+    .heroHeader{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        .heroLogoContainer{
+            width: 49px;
+            height: 49px;
+            // padding: 13px;
+            display: inline-block; 
+        }
+        h1{
+            color: $white;
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 28.08px;
+            text-align: right;
+            span{
+                color: $color__primary;
+                font-weight: 400;
+            }
+        }
+    }
+
+    .Tagline{
+        padding-top: 200px;
+        padding-bottom: 160px;
+        h2{
+            color: $white !important;
+            font-weight: 300;
+            strong{
+                font-weight: 400;
+            }
+            span{
+                color: $color__primary;
+            }
+        }
+    }
+}
+
+.heroImages{
+    height: 708px;
+    position: relative;
+
+    &.about{
+        background: url('../../../images/hero-images-about.png');
+        background-position: center center;
+        background-size: cover;
+    }
+}
+
+.heroMarquee{
+    color: $white;
+    font: $font__primary;
+    font-size: 188px;
+    line-height: 293px;
+    font-weight: 400;
+    position: absolute;
+    bottom: -160px;
+    top: auto;
+    left: 0;
+    right: 0;
+
+    .yellowText{
+        color: $color__primary;
+    }
+}

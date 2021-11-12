@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-about-template-js",
+    "path": "/about/",
+    "result": {"pageContext":{"id":"3de3d11e-7bae-5c80-86d1-355c8b1b6c4a","slug":"about","status":"publish","template":"template-about.php","title":"About","content":""}},
+    "staticQueryHashes": ["1289068231","2353704214","2422805242","245255758","263928254","3160317567","3574575558"]}
