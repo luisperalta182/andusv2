@@ -12,30 +12,30 @@ import './style.scss';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Articles = (props) => {
+const Articles = () => {
 
-    const { data } = props;
-	const [currentData, setCurrentData] = useState([]);
+    // const { data } = dataQuery;
+	// const [currentData, setCurrentData] = useState([]);
 
-	const scrollRef = useRef(true);
+	// const scrollRef = useRef(true);
 		
-	useEffect(() => {
-		setCurrentData(data);
-	}, [])
+	// useEffect(() => {
+	// 	setCurrentData(data);
+	// }, [])
 
-	if (typeof window !== "undefined") {
-		gsap.registerPlugin(ScrollTrigger); 
-	}
+	// if (typeof window !== "undefined") {
+	// 	gsap.registerPlugin(ScrollTrigger); 
+	// }
 
-	const filterByCategory = (categoryName) =>{
-		if (categoryName === "All"){
-			setCurrentData(data);
-			return;
-		}
+	// const filterByCategory = (categoryName) =>{
+	// 	if (categoryName === "All"){
+	// 		setCurrentData(data);
+	// 		return;
+	// 	}
 
-		const newData = data.filter(item => item.categories.edges.some(category => category.node.name === categoryName));
-		setCurrentData(newData);
-	}
+	// 	const newData = data.filter(item => item.categories.edges.some(category => category.node.name === categoryName));
+	// 	setCurrentData(newData);
+	// }
 
 
     return(
@@ -61,7 +61,7 @@ const Articles = (props) => {
           
         `} render={props => (
             <>
-                { currentData.length > 0 && 
+                {/* { currentData.length > 0 &&  */}
                     <div className="">
                         <ProgressBar height="9px"
                             ContainerStyle={{backgroundColor:'#000',bottom:'0',top:'none'}} 
@@ -73,33 +73,33 @@ const Articles = (props) => {
                                         <div className="divider" />
                                         <p>As a Digital Creative Agency, we help our partners take their next step through our capabilities — structured step-by-step engagements.</p>
                                     
-                                        <div className="filters">
+                                        {/* <div className="filters">
                                             <button onClick={()=> filterByCategory("Insights")}>Insights</button>								
                                             <button onClick={()=> filterByCategory("Inspiration")}>Inspirations</button>
                                             <button onClick={()=> filterByCategory("Uncategorized")}>Uncategorized</button>
 
                                             <button onClick={()=> filterByCategory("All")}>All</button>
-                                        </div>	
+                                        </div>	 */}
                                     </div>							
                                 </section>
 
                                 <section className="postSection">
                                     <div className="flexContainer">
                                         {
-                                            currentData.map( (article, index) => (
-                                                    <section className="horizontal" key={index} >	
-                                                        <Link to={ article.uri }>	
+                                            props.allWordpressPost.edges.map(postWp => (
+                                                    <section className="horizontal" key={postWp.node.id} >	
+                                                        <Link to={ postWp.node.slug }>	
                                                                 <div className="horizontalPost" >
                                                                     <div>
-                                                                        <Image src={ article.featuredImage.node.sourceUrl } fluid />
+                                                                        <Image src={ postWp.node.featured_media.source_url }  fluid />
                                                                         <div className="infoPost">
                                                                             <ul>
-                                                                            { 
-                                                                                article.categories.edges.map( category => (
-                                                                                    <li key={category.node.id}>{ category.node.name }</li>
-                                                                            ))}
+                                                                                { 
+                                                                                    postWp.node.categories.map( category => (
+                                                                                        <li key={category.id} dangerouslySetInnerHTML={{__html: category.name }} />
+                                                                                ))}
                                                                             </ul>	
-                                                                            <p className="">{ article.title }</p>
+                                                                            <p className="" dangerouslySetInnerHTML={{__html: postWp.node.title }} />
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -111,7 +111,7 @@ const Articles = (props) => {
                                     </div>	
                                 </section>
                     </div>
-                }
+                {/* } */}
             </>       
         )}>
 
