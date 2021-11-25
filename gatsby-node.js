@@ -115,7 +115,7 @@ exports.createPages = ({ graphql, actions }) => {
           // The Post ID is prefixed with 'POST_'
           _.each(result.data.allWordpressPost.edges, edge => {
             createPage({
-              path: `/post/${edge.node.slug}/`,
+              path: `/articles/${edge.node.slug}/`,
               component: slash(postTemplate),
               context: edge.node,
             })

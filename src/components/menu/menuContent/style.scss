@@ -1,0 +1,207 @@
+@import "../../../../sass/essentials";
+
+
+.menu-holder {
+  .menu-inside {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 1s cubic-bezier(1, 0, 0, 1);
+    will-change: transform;
+    background-color: #111;
+    color: white;
+    z-index: 10;
+
+    &.open {
+      transform: translateX(0);
+
+      .internal-nav-links {
+        @for $i from 0 through 5 {
+          li:nth-child(#{$i + 1}n) {
+            a {
+              // transition-delay: #{math.div($i, 10)}s;
+              // transition-delay: #{$i / 10 + 0.8}s;
+            }
+          }
+        }
+        li {
+          a {
+            transform: translate(0);
+            transition-duration: 0.8s;
+            transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+          }
+        }
+      }
+      .external-nav-links {
+        @for $i from 0 through 4 {
+          li:nth-child(#{$i + 1}n) {
+            a {
+              transition-delay: #{$i/10 + 1}s;
+            }
+          }
+        }
+
+        li {
+          a {
+            opacity: 1;
+            transform: translate(0);
+            transition-duration: 1s;
+            transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+          }
+        }
+      }
+    }
+
+    .menu-nav-container {
+      position: relative;
+      left: 220px;
+      overflow: hidden;
+      width: 80vw  ;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      height: 100vh;
+      flex-wrap: nowrap;
+    }
+
+    .internal-nav-links {
+      width: 40%;
+      li {
+        margin-bottom: 20px;
+        list-style: none;
+        padding-left: 0;
+
+        a {
+          font-size: 40px;
+          line-height: 300%;
+          font-weight: 300;
+          color: $white;
+          transform: translate(-100%);
+          will-change: transform;
+          transition: transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+          text-decoration: none;
+        }
+
+        &:hover {
+          cursor: pointer;
+          a {
+            // font-weight: 800;
+          }
+          img {
+            opacity: 1;
+            transform: translateY(-50%) translateX(30px);
+          }
+        }
+
+        img {
+          pointer-events: none;
+          aspect-ratio: 16/9;
+          opacity: 0;
+          display: block;
+          width: 30vw;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%) translateX(-30px);
+          right: 10%;
+          object-fit: cover;
+          filter: brightness(1.3) grayscale(0.54) contrast(0.8) saturate(1.2)
+            sepia(0.21);
+          transition: transform 0.5s ease-in-out;
+        }
+      }
+    }
+    .external-nav-links {
+      // margin-top: 100px;
+      width: 40%;
+      border-left: 1px solid rgba(255, 255, 255, .15);
+      display: flex;
+      flex-wrap: wrap;
+      height: 100vh;
+      padding: 0 50px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+
+      // li {
+      //   margin-right: 30px;
+
+      //   a {
+      //     transform: translate(-100%);
+      //     opacity: 0;
+      //     will-change: transform;
+      //     transition: all 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+      //   }
+      //   &:last-of-type {
+      //     margin-right: 0px;
+      //   }
+      // }
+
+      .headerContent{
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 31.2px;
+        padding-top: 30px;
+      }
+
+      .contentSmall{
+        font-size: 18px;
+        line-height: 28.08px;
+        font-weight: 300;
+        letter-spacing: -0.01em;
+        opacity: 0.35;
+        span{
+          display: block;
+        }
+      }
+      .bottomMenu{
+        display: flex;
+        padding-top: 30px;
+        ul{
+          list-style: none;
+          padding-left: 0;
+          &:nth-child(1){
+            padding-right: 56px;
+          }
+
+          li{
+            a{
+              font-size: 18px;
+              line-height: 35.64px;
+              font-weight: 400;
+            }
+          }
+        }
+      }
+      .socialIcons{
+        padding-top: 30px;
+        ul{
+          list-style: none;
+          padding-left: 0;
+          display: flex;
+          li{
+            margin-right: 23px;
+          }
+        }
+      }
+    }
+  }
+
+  @include mq("tablet", max) {
+    .menu-inside {
+      .menu-nav-container {
+        left: 10%;
+        width: 100vw;
+
+        img {
+          display: none !important;
+        }
+      }
+    }
+  }
+}
+
+

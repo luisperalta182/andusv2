@@ -1,16 +1,19 @@
 
-import React from "react"
+import React, { useState } from "react";
 import "./layout.css"
-import MainMenu from "./menu"
+import MenuManager from "./menu/menuManager"
+import Header from "./header"
 import Footer from "./footer"
 
 import './../../sass/common.scss';
 
 const Layout = ({ children }) => (
   <div className="main-container">
-    <MainMenu />
-     {children}
-    <Footer />
+    <MenuManager>
+      <Header />
+      {children}
+      <Footer />
+     </MenuManager> 
   </div>
 )
 
