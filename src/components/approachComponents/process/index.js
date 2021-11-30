@@ -70,20 +70,23 @@ const Process = () => {
         <StaticQuery query={graphql`
         {
             allWordpressPage(filter: {title: {eq: "Approach"}}) {
-              edges {
-                node {
-                  id
-                  title
-                  acf {
-                    process_section {
-                      process_header
+                edges {
+                  node {
+                    id
+                    title
+                    acf {
+                      process_section {
+                        process_header
+                        process_text_1
+                        process_text_3
+                        process_text_2
+                        process_text_4
+                      }
                     }
                   }
                 }
-              }
             }
         }  
-          
         `} render={props => (
 <div className="processComponent">
             <Container className="processSection">
@@ -122,9 +125,7 @@ const Process = () => {
                                     <span className="whiteColor">01</span> <span>04</span>
                              </div>
                             <div className="contentScrolling">
-                                <p>
-                                    As a team, we’re design-focused across every touchpoint or interaction. Everything we do and dream up has a solid design impact. We get up and go in the morning, supercharged to make a difference with design as a top-of-mind solution.
-                                </p>
+                                <p>{ props.allWordpressPage.edges[0].node.acf.process_section.process_text_1 }</p>
                             </div>
                         </div>
                         <div className="point">
@@ -132,9 +133,7 @@ const Process = () => {
                                     <span className="whiteColor">02</span> <span>04</span>
                              </div>
                             <div className="contentScrolling">
-                                <p>
-                                    As a team, we’re design-focused across every touchpoint or interaction. Everything we do and dream up has a solid design impact. We get up and go in the morning, supercharged to make a difference with design as a top-of-mind solution.
-                                </p>
+                                <p>{ props.allWordpressPage.edges[0].node.acf.process_section.process_text_2 }</p>
                             </div>
                         </div>
                         <div className="point">
@@ -142,9 +141,7 @@ const Process = () => {
                                     <span className="whiteColor">03</span> <span>04</span>
                              </div>
                             <div className="contentScrolling">
-                                <p>
-                                    As a team, we’re design-focused across every touchpoint or interaction. Everything we do and dream up has a solid design impact. We get up and go in the morning, supercharged to make a difference with design as a top-of-mind solution.
-                                </p>
+                                <p>{ props.allWordpressPage.edges[0].node.acf.process_section.process_text_3 }</p>
                             </div>
                         </div>
                         <div className="point">
@@ -152,9 +149,7 @@ const Process = () => {
                                     <span className="whiteColor">04</span> <span>04</span>
                              </div>
                              <div className="contentScrolling">
-                                <p>
-                                    As a team, we’re design-focused across every touchpoint or interaction. Everything we do and dream up has a solid design impact. We get up and go in the morning, supercharged to make a difference with design as a top-of-mind solution.
-                                </p>
+                                <p>{ props.allWordpressPage.edges[0].node.acf.process_section.process_text_4 }</p>
                             </div>
                         </div>
                     </div>

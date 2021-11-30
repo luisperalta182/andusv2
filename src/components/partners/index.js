@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useEffect, React } from "react";
 import { graphql, StaticQuery } from "gatsby";
 
 /*css*/

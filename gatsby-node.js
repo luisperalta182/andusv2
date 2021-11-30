@@ -99,6 +99,13 @@ exports.createPages = ({ graphql, actions }) => {
                     featured_media{
                       source_url
                     }
+                    acf {
+                      articles_hero {
+                        sub_title
+                        sub_title_yellow
+                        title
+                      }
+                    }
                   }
                 }
               }

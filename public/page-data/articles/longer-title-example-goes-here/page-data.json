@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-post-js",
+    "path": "/articles/longer-title-example-goes-here/",
+    "result": {"pageContext":{"id":"20686fa8-4b55-502e-9079-d5b8e54fd58a","title":"Longer Title Example Goes Here","slug":"longer-title-example-goes-here","excerpt":"","content":"","featured_media":{"source_url":"https://usagencyv2.wpengine.com/wp-content/uploads/2021/11/Group-79.png"},"acf":null}},
+    "staticQueryHashes": ["1289068231","245255758","2802709052","3160317567","3374070138"]}
