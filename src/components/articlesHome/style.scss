@@ -117,3 +117,13 @@
   
   
 }
+
+.articlesDesktop{
+  display: none !important;
+}
+
+@media(min-width: 992px){
+  .articlesDesktop{
+    display: block !important;
+  }
+}

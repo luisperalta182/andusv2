@@ -13,7 +13,8 @@ const Layout = ({ children }) => (
       <Header />
       {children}
       <Footer />
-     </MenuManager> 
+     </MenuManager>
+      
   </div>
 )
 

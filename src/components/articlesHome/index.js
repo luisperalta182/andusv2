@@ -57,7 +57,7 @@ const ArticlesHome = () => {
                     ContainerStyle={{backgroundColor:'#000',bottom:'0',top:'none'}} 
                     ProgressBarStyle={{backgroundColor:'#F9DA49'}} />
 
-                <div className="horizontal-area homeArticles">
+                <div className="horizontal-area homeArticles desktopArticles">
                     <section className="horizontal headingPost">
                         <div className="">
                             <h1>They say sharing is caring, right? We create articles to help give you insight and inspiration.</h1>

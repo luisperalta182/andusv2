@@ -1,7 +1,7 @@
 @import "../../../sass/essentials";
 
 .heroComponent{
-    padding-top: 50px;
+    padding-top: 22px;
     .heroHeader{
         display: flex;
         flex-direction: row;
@@ -15,26 +15,22 @@
             display: inline-block; 
         }
         h1{
-            color: $white;
-            font-size: 18px;
-            font-weight: 300;
-            line-height: 28.08px;
-            text-align: right;
-            span{
-                color: $color__primary;
-                font-weight: 400;
-            }
+            display: none;
         }
     }
 
     .Tagline{
-        padding-top: 200px;
-        padding-bottom: 160px;
+        padding-top: 111px;
+        padding-bottom: 39px;
         h2{
             color: $white !important;
             font-weight: 300;
+            font-size: 28px;
+            line-height: 39.34px;
             strong{
                 font-weight: 400;
+                font-size: 28px;
+                line-height: 39.34px;
             }
             span{
                 color: $color__primary;
@@ -46,18 +42,19 @@
 .heroImages{
     background: url('../../images/hero-images.png');
     background-size: cover;
-    height: 708px;
+    height: 384.68px;
     position: relative;
+    background-position: center center;
 }
 
 .heroMarquee{
     color: $white;
     font: $font__primary;
-    font-size: 188px;
-    line-height: 293px;
+    font-size: 94px;
+    line-height: 146.64px;
     font-weight: 400;
     position: absolute;
-    bottom: -160px;
+    bottom: -80px;
     top: auto;
     left: 0;
     right: 0;
@@ -65,4 +62,70 @@
     .yellowText{
         color: $color__primary;
     }
+}
+
+
+@media(min-width: 992px){
+    .heroComponent{
+        padding-top: 50px;
+        .heroHeader{
+            .heroLogoContainer{
+                width: 49px;
+                height: 49px;
+                // padding: 13px;
+                display: inline-block; 
+            }
+            h1{
+                color: $white;
+                font-size: 18px;
+                font-weight: 300;
+                line-height: 28.08px;
+                text-align: right;
+                span{
+                    color: $color__primary;
+                    font-weight: 400;
+                }
+            }
+        }
+    
+        .Tagline{
+            padding-top: 200px;
+            padding-bottom: 160px;
+            h2{
+                color: $white !important;
+                font-weight: 300;
+                strong{
+                    font-weight: 400;
+                }
+                span{
+                    color: $color__primary;
+                }
+            }
+        }
+    }
+    
+    .heroImages{
+        background: url('../../images/hero-images.png');
+        background-size: cover;
+        height: 708px;
+        position: relative;
+    }
+    
+    .heroMarquee{
+        color: $white;
+        font: $font__primary;
+        font-size: 188px;
+        line-height: 293px;
+        font-weight: 400;
+        position: absolute;
+        bottom: -160px;
+        top: auto;
+        left: 0;
+        right: 0;
+    
+        .yellowText{
+            color: $color__primary;
+        }
+    }
+    
 }

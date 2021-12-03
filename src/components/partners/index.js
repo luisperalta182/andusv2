@@ -1,8 +1,8 @@
-import { useState, useEffect, React } from "react";
-import { graphql, StaticQuery } from "gatsby";
+import React from "react";
+import { graphql, StaticQuery, Link } from "gatsby";
 
 /*css*/
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Image } from 'react-bootstrap';
 import './style.scss';
 
 
@@ -29,8 +29,11 @@ const partnersItems = () => {
                     acf {
                         partner_cpt {
                         partner_field
-                        partner_image
                         partner_name
+                        partner_image {
+                            id
+                            source_url
+                          }
                         }
                     }
                     id
@@ -58,10 +61,12 @@ const partnersItems = () => {
 
                         {props.allWordpressWpPartners.edges.map(partnerItem => (
                             <Col key={partnerItem.node.id} md={{ span: 9, offset: 1 }}>
-                                <div className="rowPartners" >
+                                <Link className="rowPartners" >
                                     <p className="partnerName">{ partnerItem.node.acf.partner_cpt.partner_name }</p>
                                     <p className="partnerField">{ partnerItem.node.acf.partner_cpt.partner_field } </p>
-                                </div>
+                                </Link>
+                                <div className="hoverImage"><Image src={ partnerItem.node.acf.partner_cpt.partner_image.source_url }  fluid /></div>
+                                <div className="bgHover"></div>
                             </Col>
                         ))}
                     </Row>

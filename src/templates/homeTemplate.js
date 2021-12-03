@@ -13,6 +13,6 @@ export default ({pageContext}) => (
         <AboutHome />
         <ApproachHome />
         <PartnersItems />
-        <ArticlesHome />
+        <div className="articlesDesktop"><ArticlesHome /></div>
     </Layout>
 );
